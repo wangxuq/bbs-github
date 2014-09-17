@@ -1,0 +1,10 @@
+﻿<%include header.ejs%>
+    <div class="post">
+		<legend><font size="5" color="green"><%=title%></font></legend>
+		<% posts.forEach(function(tag,index){ %>
+			<%if(tag){%>
+				<a class="tag" href="/tags/<%=tag%>"><%=tag%></a>
+			<%}%>
+		<%}); %>
+    </div>
+<%include footer.ejs%>

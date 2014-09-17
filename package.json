@@ -1,0 +1,17 @@
+{ "name": "bbs",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+	"start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.5.0",
+    "ejs": "*",
+	"connect-mongo":"*",
+	"connect-flash":"*",
+	"mongodb":"*",
+	"markdown":"*",
+	"passport":"*",
+	"passport-github":"*"
+  }
+}

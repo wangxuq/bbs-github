@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=title%></title>
+	<script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+	<link  rel='stylesheet' href='/stylesheets/bootstrap-response.css'/>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="/">BBS</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="active"><a href="/">index</a></li>
+						<%if(!user){%>
+							<li><a href="/login">login</a></li>
+							<li><a href="/reg">register</a></li>	
+						<%}%>
+						<li><a href="/archive">archive</a></li>
+						<li><a href="/tags">tags</a></li>
+						<%if(user){%>
+							<li><a href="/post">post</a></li>
+							<li><a href="/logout">logout</a></li>
+						<%}%>
+						
+						<%if(!user){%>
+							<li>
+								<li><a href="/login/github">using github login</a></li>
+							</li>	
+						<%}%>
+						<li>
+							<form action="/search" method="get" style="border:0;width:3em;text-align:center;font-size:1em;margin:0.8em 2em;">
+								<input type="text" name="keyword" width="15" placeholder="search"/>
+							</form>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><br><br>
+	<div id="container" class="container">
+		<% if(success){ %>
+			<div class="alert alert-success">
+				<%=success%>
+			</div>
+		<%}%>
+		<%if(error){%>
+			<div class="alert alert-error">
+				<%=error%>
+			</div>
+		<%}%>
+		
+      
+   

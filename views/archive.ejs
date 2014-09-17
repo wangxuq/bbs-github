@@ -1,0 +1,18 @@
+﻿<%include header.ejs%>
+	<div class="post">
+		<legend><font size="5" color="green"><%=title%></font></legend>
+		<ul class="archive">
+			<%var lastyear = 0 ;%>
+			<% posts.forEach(function(post,index){ %>
+				<%if(lastyear != post.time.year){%>
+					<li><h2><%=post.time.year%></h2></li>
+					<%lastyear = post.time.year%>
+				<%}%>
+					<h3 >
+						<li><time><%=post.time.day%></time><li>
+						<li><a href="/u/<%=post.name%>/<%=post.time.day%>/<%=post.title%>"><%=post.title%></a></li>
+					<h3>
+			<%}); %>
+		</ul>
+	</div>
+<%include footer.ejs%>

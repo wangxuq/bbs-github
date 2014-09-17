@@ -1,0 +1,35 @@
+﻿<%include header.ejs%>
+<form class="form-horizontal" method="post">
+	<fieldset>
+		<legend>用户注册</legend>
+		<div class="control-group">
+			<label class="control-label" for="name">用户名</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="name" name="name"/>
+				<p class="help-block">您的用户名称，用于登录和显示</p>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="password">口令</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" id="password" name="password">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="repassword">再次输入口令</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" id="repassword" name="repassword">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="email">邮箱</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="email" name="email">
+			</div>
+		</div>
+		<div class="form-actions">
+			<button class="btn btn-primary">注册</button>
+		</div>
+	</fieldset>
+</form>
+<%include footer.ejs%>

@@ -1,0 +1,24 @@
+﻿<%include header.ejs%>
+<form method="post">
+    <div class="post">
+		<legend><font size="5" color="green"><%=post.title%></font></legend><br/>
+		<a href="/u/<%=post.name%>"><img src="<%=post.head%>" class="r_head"></a>
+			<p class="info">
+				<%if(post.tags){%>
+					<%post.tags.forEach(function(tag,index){ %>
+						<%if(tag.tag){%>
+							<a class="tag" href="/tags/<%=tag.tag%>"><%=tag.tag%></a>
+						<%}%>
+					<%});%>
+				<%}%>
+			</p>
+			<p>
+				<textArea type="text" name="post" rows="5" cols="200"><%=post.post%></textArea>
+			</p>
+			<div class="form-actions">
+				<button class="btn btn-primary">保存</button>
+			</div>
+    </div>
+	
+</form>
+<%include footer.ejs%>
